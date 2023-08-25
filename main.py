@@ -449,7 +449,7 @@ class ManifestAutoUpdate:
                         self.app_lock[int(app_id)].add(depot_id)
                     if 'manifests' in depot and 'public' in depot['manifests'] and int(
                             depot_id) in {*cdn.licensed_depot_ids, *cdn.licensed_app_ids}:
-                        manifest_gid = depot['manifests']['public']
+                        manifest_gid = depot['manifests']['public']['gid']
                         self.set_depot_info(depot_id, manifest_gid)
                         with lock:
                             if int(app_id) not in self.user_info[username]['app']:
