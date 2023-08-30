@@ -23,11 +23,11 @@ on:
       retry:
         description: Number of retries
         required: true
-        default: 3
+        default: 5
       time:
         description: Update wait time
         required: true
-        default: 1
+        default: 86400
       args:
         description: args
         required: false
