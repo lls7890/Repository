@@ -49,7 +49,7 @@ class MyJson(dict):
             self.dump()
             return
         with self.path.open() as f:
-            self.update(json.load(f))
+            self.update(json.load(f,ensure_ascii=False))
 
     def dump(self):
         with self.path.open('w') as f:
@@ -449,7 +449,7 @@ class ManifestAutoUpdate:
                         self.app_lock[int(app_id)].add(depot_id)
                     if 'manifests' in depot and 'public' in depot['manifests'] and int(
                             depot_id) in {*cdn.licensed_depot_ids, *cdn.licensed_app_ids}:
-                        manifest_gid = depot['manifests']['public']['gid']
+                        manifest_gid = depot['manifests']['public']["gid"]
                         self.set_depot_info(depot_id, manifest_gid)
                         with lock:
                             if int(app_id) not in self.user_info[username]['app']:
