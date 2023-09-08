@@ -49,7 +49,7 @@ class MyJson(dict):
             self.dump()
             return
         with self.path.open() as f:
-            self.update(json.load(f,ensure_ascii=False))
+            self.update(json.load(f))
 
     def dump(self):
         with self.path.open('w') as f:
