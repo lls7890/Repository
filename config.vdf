@@ -1,5 +1,9 @@
 "depots"
 {
+	"8001"
+	{
+		"DecryptionKey" "4e1307023822badbbf24311cd61f7a64e6e36f9b31d3548cad45ecf53e5c2b64"
+	}
 	"8004"
 	{
 		"DecryptionKey" "85a3d729a50020ae5ee44b40241e3f00e970cdcaed1a58f3398119d3ff2504f4"
