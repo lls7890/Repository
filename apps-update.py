@@ -22,7 +22,9 @@ lock = Lock()
 day = datetime.now()
 yesterday = day - timedelta(days=1)
 yesterday_str = yesterday.strftime('%Y-%m-%d')
-
+dir = os.walk('.')
+for e in dir:
+    print(e)
 yesterday_start_time = int(time.mktime(time.strptime(yesterday_str, '%Y-%m-%d')))
 yesterday_end_time = int(time.mktime(time.strptime(day.strftime('%Y-%m-%d'), '%Y-%m-%d'))) - 1
 
@@ -30,6 +32,7 @@ s = requests.session()
 s.keep_alive = False
 requests.packages.urllib3.disable_warnings()
 config = configparser.ConfigParser()
+
 if not os.path.exists(r'data\config.ini'):
     config['github'] = {'token': ''}
     with open(r'data\config.ini', 'w') as configfile:
