@@ -29,7 +29,7 @@ s = requests.session()
 s.keep_alive = False
 requests.packages.urllib3.disable_warnings()
 config = configparser.ConfigParser()
-ROOT = Path('data').absolute()
+ROOT = Path().absolute()
 root = os.walk(ROOT)
 for dir in root:
     print(dir)
