@@ -1,4 +1,4 @@
-name: APPS
+name: APPS-YESTERDAY
 on:
   workflow_dispatch:
     inputs:
