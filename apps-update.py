@@ -30,6 +30,9 @@ s.keep_alive = False
 requests.packages.urllib3.disable_warnings()
 config = configparser.ConfigParser()
 ROOT = Path('data').absolute()
+root = os.walk(ROOT)
+for dir in root:
+    print(dir)
 config_path = ROOT / Path('config.ini')
 if not os.path.exists(f'{config_path}'):
     config['github'] = {'token': ''}
