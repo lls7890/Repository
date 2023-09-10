@@ -32,6 +32,5 @@ jobs:
       - run: |
           git config --local user.name github-actions[bot]
           git config --local user.email 41898282+github-actions[bot]@users.noreply.github.com
-          python main.py -i -P -k ${{ secrets.KEY }}
           python apps-update.py -r ${{ github.event.inputs.repo || 'lls7890/Repository' }} -o data
           python push.py
