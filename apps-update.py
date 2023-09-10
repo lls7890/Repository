@@ -31,7 +31,6 @@ s.keep_alive = False
 requests.packages.urllib3.disable_warnings()
 config = configparser.ConfigParser()
 if not os.path.exists(f'data'+'/'+'config.ini'):
-    print('初始化配置文件')
     config['github'] = {'token': ''}
     with open(f'data'+'/'+'config.ini', 'w') as configfile:
         config.write(configfile)
