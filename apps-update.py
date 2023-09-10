@@ -30,11 +30,11 @@ s = requests.session()
 s.keep_alive = False
 requests.packages.urllib3.disable_warnings()
 config = configparser.ConfigParser()
-if not os.path.exists(f'data'+'/'+'config.ini'):
+if not os.path.exists(r'data\config.ini'):
     config['github'] = {'token': ''}
-    with open(f'data'+'/'+'config.ini', 'w') as configfile:
+    with open(r'data\config.ini', 'w') as configfile:
         config.write(configfile)
-config.read(f'data'+'/'+'config.ini')
+config.read(f'data\config.ini')
 token = config['github']['token']
 
 
